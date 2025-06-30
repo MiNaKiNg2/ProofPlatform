@@ -61,6 +61,8 @@ body.dark {
 body {
     background: var(--main-bg);
     color: var(--txt-main);
+    max-width:100%;
+    overflow-x: hidden;
 }
 
 .navbar-ein {
