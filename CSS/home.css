@@ -68,6 +68,7 @@ body {
 
 .navbar-ein {
     background: var(--navbar-bg);
+    width:100%;
 }
 
 .ein-create-btn {
