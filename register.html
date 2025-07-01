@@ -1,338 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <title>انشاء حساب</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap & Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"> -->
-    <!-- css link -->
-    <link rel="stylesheet" href="CSS/register.css">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/nav.css">
-</head>
-
-<body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-ein">
-        <!-- النص: اللوجو في النص -->
-        <div class="ein-brand-side d-flex align-items-center order-1 mx-auto" onclick="goToHome()">
-            <span class="ein-logo-text"><span class="ein-highlight">EL</span>PROOF</span>
-            <img src="IMG/Logo.jpg" class="ein-avatar" alt="User">
-        </div>
-        <div class="ein-container container-fluid">
-            <!-- الشمال: 3 شرط -->
-            <div class="d-flex align-items-center order-0">
-                <!-- زرار 3 شرط -->
-                <button id="menuBtn" class="navbar-toggler" type="button">
-                    <span>
-                        <span
-                            style="display:block;width:30px;height:3px;background:#DB88FF;margin:6px 0;border-radius:2px;"></span>
-                        <span
-                            style="display:block;width:30px;height:3px;background:#DB88FF;margin:6px 0;border-radius:2px;"></span>
-                        <span
-                            style="display:block;width:30px;height:3px;background:#DB88FF;margin:6px 0;border-radius:2px;"></span>
-                    </span>
-                </button>
-
-                <!-- السلايدر الجانبي -->
-                <div id="sideMenu" class="side-menu">
-                    <button class="close-btn" onclick="toggleSideMenu()">&times;</button>
-                    <a href="login.html" class="side-btn side-btn-main"><i class="bi bi-box-arrow-in-right"></i> تسجيل
-                        الدخول</a>
-                    <a href="register.html" class="side-btn"><i class="bi bi-house-door"></i> انشئ حسابك!</a>
-                </div>
-            </div>
-            <!-- اللينكات -->
-            <div class="collapse navbar-collapse order-3" id="navbarContent">
-                <div
-                    class="ein-btns-side ms-auto d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-2 gap-lg-3 mt-3 mt-lg-0">
-                    <a href="login.html" class="ein-login-btn d-block text-center"><i
-                            class="bi bi-box-arrow-in-right"></i>تسجيل
-                        الدخول</a>
-                    <a href="register.html" class="ein-create-btn d-block text-center"><i
-                            class="bi bi-house-door"></i>انشئ
-                        حسابك!</a>
-                </div>
-            </div>
-        </div>
-        <!-- اليمين: زرار المود (شمس وقمر) -->
-        <div class="nav-right">
-            <label class="switch">
-                <input id="input" type="checkbox" checked="darkTheme" id="modeSwitch" />
-                <div class="slider round">
-                    <div class="sun-moon">
-                        <svg id="moon-dot-1" class="moon-dot" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="50"> </circle>
-                        </svg>
-                        <svg id="moon-dot-2" class="moon-dot" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="50"> </circle>
-                        </svg>
-                        <svg id="moon-dot-3" class="moon-dot" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="50"> </circle>
-                        </svg>
-                        <svg id="light-ray-1" class="light-ray" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="50"> </circle>
-                        </svg>
-                        <svg id="light-ray-2" class="light-ray" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="50"> </circle>
-                        </svg>
-                        <svg id="light-ray-3" class="light-ray" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="50"> </circle>
-                        </svg>
-                        <svg id="cloud-1" class="cloud-dark" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="50"> </circle>
-                        </svg>
-                        <svg id="cloud-2" class="cloud-dark" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="50"> </circle>
-                        </svg>
-                        <svg id="cloud-4" class="cloud-light" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="50"> </circle>
-                        </svg>
-                        <svg id="cloud-5" class="cloud-light" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="50"> </circle>
-                        </svg>
-                        <svg id="cloud-6" class="cloud-light" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="50"> </circle>
-                        </svg>
-                    </div>
-                    <div class="stars">
-                        <svg id="star-1" class="star" viewBox="0 0 20 20">
-                            <path
-                                d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z">
-                            </path>
-                        </svg>
-                        <svg id="star-2" class="star" viewBox="0 0 20 20">
-                            <path
-                                d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z">
-                            </path>
-                        </svg>
-                        <svg id="star-3" class="star" viewBox="0 0 20 20">
-                            <path
-                                d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z">
-                            </path>
-                        </svg>
-                        <svg id="star-4" class="star" viewBox="0 0 20 20">
-                            <path
-                                d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z">
-                            </path>
-                        </svg>
-                    </div>
-                </div>
-            </label>
-        </div>
-    </nav>
-    <!-- MAIN SPLIT -->
-    <div class="main-split">
-        <!-- شمال: فورم تسجيل الحساب الجديد -->
-        <div class="login-side">
-            <div class="login-content">
-                <div class="login-title">
-                    <i class="bi bi-house-door icon"></i>
-                    <span style="color: var(--primary-bold); font-weight: 800;">انشئ حسابك الآن :</span>
-                </div>
-                <div class="login-desc">
-                    ادخل بياناتك بشكل صحيح للحصول على أفضل تجربة داخل الموقع
-                </div>
-                <form id="registerForm" autocomplete="off" onsubmit="return handleRegister()">
-                    <div class="row mb-2 w-100">
-                        <div class="col-12 col-md-6 mb-2">
-                            <label class="form-label" for="firstName">الاسم الأول :</label>
-                            <div style="position:relative;">
-                                <input type="text" class="form-control" id="firstName" placeholder="الاسم الأول">
-                                <i class="bi bi-person input-icon" style="position:absolute;left:7px;top:13px;"></i>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 mb-2">
-                            <label class="form-label" for="secondName">الاسم الثاني :</label>
-                            <div style="position:relative;">
-                                <input type="text" class="form-control" id="secondName" placeholder="الاسم الثاني">
-                                <i class="bi bi-person input-icon" style="position:absolute;left:7px;top:13px;"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-2 w-100">
-                        <div class="col-12 col-md-6 mb-2">
-                            <label class="form-label" for="thirdName">الاسم الثالث :</label>
-                            <div style="position:relative;">
-                                <input type="text" class="form-control" id="thirdName" placeholder="الاسم الثالث">
-                                <i class="bi bi-person input-icon" style="position:absolute;left:7px;top:13px;"></i>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 mb-2">
-                            <label class="form-label" for="gender">نوع الثانوية :</label>
-                            <select id="gender" class="form-control">
-                                <option value="">اختار نوع الثانوية</option>
-                                <option value="1">ثانوية عامة</option>
-                                <option value="2">ثانوية ازهرية</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row mb-2 w-100">
-                        <div class="col-12 col-md-6 mb-2">
-                            <label class="form-label" for="phone">رقم الهاتف :</label>
-                            <div style="position:relative;">
-                                <input type="tel" class="form-control" id="phone" placeholder="رقم الهاتف">
-                                <i class="bi bi-telephone input-icon" style="position:absolute;left:7px;top:13px;"></i>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 mb-2">
-                            <label class="form-label" for="fatherPhone">رقم هاتف الأب :</label>
-                            <div style="position:relative;">
-                                <input type="tel" class="form-control" id="fatherPhone" placeholder="رقم هاتف الأب">
-                                <i class="bi bi-telephone input-icon" style="position:absolute;left:7px;top:13px;"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-2 w-100">
-                        <div class="col-12 col-md-6 mb-2">
-                            <label class="form-label" for="school">اسم المدرسة :</label>
-                            <div style="position:relative;">
-                                <input type="text" class="form-control" id="school" placeholder="اسم المدرسة">
-                                <i class="bi bi-building input-icon" style="position:absolute;left:7px;top:13px;"></i>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 mb-2">
-                            <label class="form-label" for="email">البريد الإلكتروني :</label>
-                            <div style="position:relative;">
-                                <input type="email" class="form-control" id="email" placeholder="البريد الإلكتروني">
-                                <i class="bi bi-envelope input-icon" style="position:absolute;left:7px;top:13px;"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-2 w-100">
-                        <div class="col-12 col-md-6 mb-2">
-                            <label class="form-label" for="password">كلمة السر :</label>
-                            <div style="position:relative;">
-                                <input type="password" class="form-control" id="password" placeholder="كلمة السر">
-                                <i class="bi bi-lock input-icon" style="position:absolute;left:7px;top:13px;"></i>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 mb-2">
-                            <label class="form-label" for="confirmPassword">تأكيد كلمة السر :</label>
-                            <div style="position:relative;">
-                                <input type="password" class="form-control" id="confirmPassword"
-                                    placeholder="تأكيد كلمة السر">
-                                <i class="bi bi-lock input-icon" style="position:absolute;left:7px;top:13px;"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-2 w-100">
-                        <div class="col-12 col-md-6 mb-2">
-                            <label class="form-label" for="governorate">المحافظة :</label>
-                            <select id="governorate" class="form-control">
-                                <option value="">اختر المحافظة</option>
-                                <option value="القاهرة">القاهرة</option>
-                                <option value="الجيزة">الجيزة</option>
-                                <option value="الإسكندرية">الإسكندرية</option>
-                                <option value="الدقهلية">الدقهلية</option>
-                                <option value="البحر الأحمر">البحر الأحمر</option>
-                                <option value="البحيرة">البحيرة</option>
-                                <option value="الفيوم">الفيوم</option>
-                                <option value="الغربية">الغربية</option>
-                                <option value="الإسماعيلية">الإسماعيلية</option>
-                                <option value="المنوفية">المنوفية</option>
-                                <option value="المنيا">المنيا</option>
-                                <option value="القليوبية">القليوبية</option>
-                                <option value="الوادي الجديد">الوادي الجديد</option>
-                                <option value="السويس">السويس</option>
-                                <option value="أسوان">أسوان</option>
-                                <option value="أسيوط">أسيوط</option>
-                                <option value="بني سويف">بني سويف</option>
-                                <option value="بورسعيد">بورسعيد</option>
-                                <option value="دمياط">دمياط</option>
-                                <option value="الشرقية">الشرقية</option>
-                                <option value="جنوب سيناء">جنوب سيناء</option>
-                                <option value="كفر الشيخ">كفر الشيخ</option>
-                                <option value="مطروح">مطروح</option>
-                                <option value="الأقصر">الأقصر</option>
-                                <option value="قنا">قنا</option>
-                                <option value="شمال سيناء">شمال سيناء</option>
-                                <option value="سوهاج">سوهاج</option>
-                            </select>
-                        </div>
-                        <div class="col-12 col-md-6 mb-2">
-                            <label class="form-label" for="gender">النوع :</label>
-                            <select id="gender" class="form-control">
-                                <option value="">اختر النوع</option>
-                                <option value="1">ذكر</option>
-                                <option value="2">أنثى</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row mb-2 w-100">
-                        <div class="col-12 col-md-6 mb-2">
-                            <label class="form-label" for="grade">الصف :</label>
-                            <select id="grade" class="form-control">
-                                <option value="">اختر الصف</option>
-                                <option value="1">الصف الأول الثانوي</option>
-                                <option value="2">الصف الثاني الثانوي</option>
-                                <option value="3">الصف الثالث الثانوي</option>
-                            </select>
-                        </div>
-                        <div class="col-12 col-md-6 mb-2">
-                            <label class="form-label" for="section">الشعبة :</label>
-                            <select id="section" class="form-control">
-                                <option value="">اختر الشعبة</option>
-                                <option value="1">عام</option>
-                                <option value="2">أدبي</option>
-                                <option value="3">علمي</option>
-                                <option value="4">علمي رياضة</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button type="submit" class="login-btn w-100 mt-3">انشئ الحساب!</button>
-                </form>
-                <div class="no-account mt-3">
-                    يوجد لديك حساب بالفعل؟ <a href="login.html" class="create-link">ادخل إلى حسابك الآن!</a>
-                </div>
-            </div>
-        </div>
-        <!-- يمين: البانر زي ما هو -->
-        <div class="banner-side">
-            <div class="banner-content">
-                <div class="banner-img-wrap">
-                    <img src="IMG/2345.png" class="banner-img" alt="teacher">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- FOOTER -->
-    <footer class="main-footer">
-        <div class="footer-logo"><span class="highlight">EL</span>.PROOF</div>
-        <div class="footer-desc"><span class="x">SERIES IN</span> MATHEMATICS</div>
-        <div class="footer-social mb-1">
-            <a href="http://wa.me/+201153774448" class="whatsapp" title="واتساب"><i class="bi bi-whatsapp"></i></a>
-            <a href="https://www.facebook.com/share/19DmjSMeir/" class="facebook" title="فيسبوك"><i
-                    class="bi bi-facebook"></i></a>
-            <a href="https://youtube.com/@proofahmed11?si=G57AxCt31r583yUu" class="youtube" title="يوتيوب"><i
-                    class="bi bi-youtube"></i></a>
-        </div>
-        <div class="paragraph" style="font-size:1.03rem;">
-            💓 تم صنع هذه المنصة بهدف تهيئة الطالب <br>لكامل جوانب الثانوية العامة وما بعدها 💓
-        </div>
-        <div class="footer-info">
-            &lt; Developed By &gt;
-            <br>
-            <br>
-            <div class="developer">
-                <button class="a"><a class="a" href="https://www.facebook.com/share/1Ai842s5n4/">MinaHany</a></button>
-                <button class="a"><a class="a" href="https://www.facebook.com/share/1G2ETwDYcN/">Marco
-                        Mourad</a></button>
-                <button class="a"><a class="a" href="https://www.facebook.com/share/18yahCCnkN/">Fahd Gamal</a></button>
-            </div>
-            <br>
-            &lt;All Copy Rights Reserved <span class="copy">@2025</span> &gt;
-        </div>
-        <div class="footer-powered"><br>
-        </div>
-    </footer>
-    <script src="JS/nav.js"></script>
-    <script src="JS/register.js"></script>
-
-</body>
-
-</html>
